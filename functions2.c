@@ -44,8 +44,6 @@ ind++;
 return (write_pointer(buffer, ind, length,
 width, flags, padd, extra_c, padd_start));
 }
-
-
 /************************* PRINT NON PRINTABLE *************************/
 /**
 * print_non_printable - Prints ascii codes in hexa of non printable chars
@@ -79,8 +77,6 @@ i++;
 buffer[i + offset] = '\0';
 return (write(1, buffer, i + offset));
 }
-
-
 /************************* PRINT REVERSE *************************/
 /**
 * print_reverse - Prints reverse string.

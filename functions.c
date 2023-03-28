@@ -1,24 +1,3 @@
-#include <unistd.h>
-#include "main.h"
-
-/**
-
-* _putchar - writes the character c to stdout
-* @c: The character to print
-*
-* Return: On success 1.
-* On error, -1 is returned, and errno is set appropriately.
-*/
-
-int _putchar(char c)
-{
-return (write(1, &c, 1));
-}
-
-
-vi functions.c
-
-
 #include "main.h"
 
 
@@ -35,7 +14,6 @@ vi functions.c
 * @size: Size specifier
 * Return: Number of chars printed
 */
-
 int print_char(va_list types, char buffer[],
 int flags, int width, int precision, int size)
 {
@@ -44,15 +22,15 @@ return (handle_write_char(c, buffer, flags, width, precision, size));
 }
 /************************* PRINT A STRING *************************/
 /**
-* print_string - Prints a string
-* @types: List a of arguments
-* @buffer: Buffer array to handle print
-* @flags:  Calculates active flags
-* @width: get width.
-* @precision: Precision specification
-* @size: Size specifier
-* Return: Number of chars printed
-*/
+ * print_string - Prints a string
+ * @types: List a of arguments
+ * @buffer: Buffer array to handle print
+ * @flags:  Calculates active flags
+ * @width: get width.
+ * @precision: Precision specification
+ * @size: Size specifier
+ * Return: Number of chars printed
+ */
 int print_string(va_list types, char buffer[],
 int flags, int width, int precision, int size)
 {
@@ -114,8 +92,6 @@ UNUSED(precision);
 UNUSED(size);
 return (write(1, "%%", 1));
 }
-
-
 /************************* PRINT INT *************************/
 /**
 * print_int - Print int
@@ -152,8 +128,6 @@ num /= 10;
 i++;
 return (write_number(is_negative, i, buffer, flags, width, precision, size));
 }
-
-
 /************************* PRINT BINARY *************************/
 /**
 * print_binary - Prints an unsigned number

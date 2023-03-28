@@ -38,8 +38,6 @@ write(1, &buffer[0], 1));
 }
 return (write(1, &buffer[0], 1));
 }
-
-
 /************************* WRITE NUMBER *************************/
 /**
 * write_number - Prints a string
@@ -70,7 +68,6 @@ extra_ch = ' ';
 return (write_num(ind, buffer, flags, width, precision,
 length, padd, extra_ch));
 }
-
 /**
 * write_num - Write a number using a bufffer
 * @ind: Index at which the number starts on the buffer
@@ -178,14 +175,12 @@ return (write(1, &buffer[0], i) + write(1, &buffer[ind], length));
 }
 return (write(1, &buffer[ind], length));
 }
-
-
 /**
 * write_pointer - Write a memory address
 * @buffer: Arrays of chars
 * @ind: Index at which the number starts in the buffer
 * @length: Length of number
-* @width: Wwidth specifier
+* @width: Width specifier
 * @flags: Flags specifier
 * @padd: Char representing the padding
 * @extra_c: Char representing extra char
@@ -223,10 +218,9 @@ else if (!(flags & F_MINUS) && padd == '0')/* extra char to left of padd */
 if (extra_c)
 buffer[--padd_start] = extra_c;
 buffer[1] = '0';
- buffer[2] = 'x';
+buffer[2] = 'x';
 return (write(1, &buffer[padd_start], i - padd_start) +
 write(1, &buffer[ind], length - (1 - padd_start) - 2));
-}
 }
 buffer[--ind] = 'x';
 buffer[--ind] = '0';
