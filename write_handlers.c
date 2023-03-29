@@ -1,6 +1,5 @@
 #include "main.h"
 
-
 /************************* WRITE HANDLE *************************/
 /**
 * handle_write_char - Prints a string
@@ -125,8 +124,6 @@ if (extra_c)
 buffer[--ind] = extra_c;
 return (write(1, &buffer[ind], length));
 }
-
-
 /**
 * write_unsgnd - Writes an unsigned number
 * @is_negative: Number indicating if the num is negative
@@ -221,6 +218,7 @@ buffer[1] = '0';
 buffer[2] = 'x';
 return (write(1, &buffer[padd_start], i - padd_start) +
 write(1, &buffer[ind], length - (1 - padd_start) - 2));
+}
 }
 buffer[--ind] = 'x';
 buffer[--ind] = '0';
